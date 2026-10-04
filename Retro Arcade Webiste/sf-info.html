@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Info - Street Fighter 1987</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="xp-window">
+        <div class="title-bar">
+            <div class="title-text">Game_Details.exe</div>
+            <div class="window-controls"><span>_</span><span>[]</span><span class="close-btn"
+                    onclick="history.back()">X</span></div>
+        </div>
+
+        <div class="content-area" style="overflow-y: auto;">
+            <nav style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+                <a href="index.html">Back to Home</a>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <span style="font-size: 0.8rem; color: var(--neon-cyan);">TEXT SIZE:</span>
+                    <button onclick="changeFontSize('increase')"
+                        style="background: var(--neon-cyan); color: black; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A+</button>
+                    <button onclick="changeFontSize('decrease')"
+                        style="background: var(--neon-pink); color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A-</button>
+                    <button onclick="changeFontSize('reset')"
+                        style="background: #333; color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">Reset</button>
+                </div>
+            </nav>
+
+            <h1>GAME INFORMATION</h1>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6c/Street_Fighter_game_flyer.png"
+                    class="modal-trigger" style="border: 4px solid var(--neon-cyan); width: 300px; cursor: zoom-in;"
+                    alt="Street Fighter Cover">
+                <div>
+                    <h2 style="color: #39ff14;">STREET FIGHTER (1987)</h2>
+                    <p>Before the world-famous sequel, the original Street Fighter introduced Ryu and Ken to the world.
+                        It laid the foundation for every fighting game that followed.</p>
+
+                    <p><strong>DEVELOPER:</strong> Capcom</p>
+
+                    <p><strong>THE OBJECTIVE:</strong> Travel to five countries to defeat ten opponents in hand-to-hand
+                        combat. You must master the secret "Special Moves"—the Hadouken, Shoryuken, and Tatsumaki
+                        Senpukyaku—to defeat the final boss, Sagat.</p>
+
+                    <p><strong>LEGACY:</strong> While the first game was difficult to control, it pioneered the
+                        "six-button" layout and the concept of input-based special attacks. It turned the arcade into a
+                        competitive arena where players could truly test their skills against one another.</p>
+
+                    <p><strong>FACT:</strong> The original arcade cabinet featured two massive "pressure pads." The
+                        harder you punched the pad, the stronger the attack was on screen. These were eventually
+                        replaced by the standard six-button layout to prevent injuries and machine damage.</p>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+            <h2 style="text-align: center; color: var(--neon-pink); font-size: 1.5rem;">EVOLUTION OF STREET FIGHTER</h2>
+
+            <div
+                style="display: flex; flex-direction: column; align-items: center; position: relative; padding: 20px 0;">
+
+                <div
+                    style="position: absolute; width: 4px; background: var(--neon-cyan); top: 0; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 1;">
+                </div>
+
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.2rem; color: #39ff14;">1990s</h3>
+                    <p style="font-size: 0.9rem; margin-top: 5px;"><b>Street Fighter II</b> explodes in popularity,
+                        followed by the technical <b>Alpha</b> and <b>III</b> series.</p>
+                </div>
+
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.2rem; color: #39ff14;">2000s</h3>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">The franchise returns after a long hiatus with
+                        <b>Street Fighter IV</b>, bringing the series into 2.5D graphics.
+                    </p>
+                </div>
+
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.2rem; color: #39ff14;">2010s</h3>
+                    <p style="font-size: 0.9rem; margin-top: 5px;"><b>Street Fighter V</b> focuses on the competitive
+                        pro-circuit and esports integration.</p>
+                </div>
+
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-pink); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.2rem; color: #ff00ff;">PRESENT</h3>
+                    <p style="font-size: 0.9rem; margin-top: 5px;"><b>Street Fighter 6</b> introduces the "World Tour"
+                        mode and modern controls for a new era of fighters.</p>
+                </div>
+
+            </div>
+
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+
+            <div style="border: 2px solid var(--neon-cyan); margin-bottom: 40px;">
+                <button onclick="toggleExtraInfo()"
+                    style="width: 100%; background: #222; color: var(--neon-cyan); padding: 15px; border: none; font-family: 'VT323', monospace; font-size: 1.5rem; text-align: left; cursor: pointer;">
+                    [+] EXTRA INFO & EXTERNAL LINKS
+                </button>
+                <div id="extraInfoContent"
+                    style="display: none; background: #111; padding: 20px; border-top: 1px solid var(--neon-cyan);">
+                    <p>Enter the world of warriors with these fighting archives:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="https://www.streetfighter.com/" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> Official Street Fighter
+                                Portal</a>
+                        </li>
+                        <li>
+                            <a href="https://en.wikipedia.org/wiki/Street_Fighter_(video_game)" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> Wikipedia: Street Fighter
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-bar">
+            <div class="start-btn"></div>
+        </div>
+    </div>
+
+    <div id="imgModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+        <span class="close-modal"
+            style="position:absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+        <img id="modalImg" style="max-width:80%; max-height:80%; border:5px solid white;">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

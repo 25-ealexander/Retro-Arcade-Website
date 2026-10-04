@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Info - Tetris 1989</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="xp-window">
+        <div class="title-bar">
+            <div class="title-text">Game_Details.exe</div>
+            <div class="window-controls"><span>_</span><span>[]</span><span class="close-btn"
+                    onclick="history.back()">X</span></div>
+        </div>
+        <div class="content-area" style="overflow-y: auto;">
+            <nav style="display: flex; align-items: center; justify-content: space-between;">
+                <a href="index.html">Back to Home</a>
+                <div style="display: flex; gap: 8px;">
+                    <button onclick="changeFontSize('increase')"
+                        style="background: var(--neon-cyan); color: black; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A+</button>
+                    <button onclick="changeFontSize('decrease')"
+                        style="background: var(--neon-pink); color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A-</button>
+                    <button onclick="changeFontSize('reset')"
+                        style="background: #333; color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">Reset</button>
+                </div>
+            </nav>
+            <h1>GAME INFORMATION</h1>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <img src="https://img-grouvee-com.b-cdn.net/upload/cache/0d/bf/0dbf9d8e753dc7f0249fdb1bad6cfe8b.jpg"
+                    style="border: 4px solid var(--neon-cyan); width: 300px; cursor: zoom-in;" alt="Tetris Cover">
+                <div>
+                    <h2 style="color: #39ff14;">TETRIS (1989)</h2>
+                    <p>Designed by Alexey Pajitnov at the Academy of Science in Moscow, Tetris is a puzzle masterpiece
+                        that crossed the Iron Curtain to become a global phenomenon.</p>
+                    <p><strong>DEVELOPER:</strong> Alexey Pajitnov / ELORG</p>
+                    <p><strong>THE OBJECTIVE:</strong> Clear horizontal lines by manipulating falling geometric shapes
+                        called Tetrominoes. As you clear lines, the game speeds up, testing your reflexes and spatial
+                        logic.</p>
+                    <p><strong>LEGACY:</strong> Tetris is considered the most ported game in history. Its inclusion as a
+                        pack-in title for the Nintendo Game Boy made it a staple of mobile gaming and proved that puzzle
+                        games could be system-sellers.</p>
+                    <p><strong>THE KILL SCREEN:</strong> For decades, Level 29 was thought to be the "kill screen" due
+                        to the speed, but in 2023, a young player finally pushed the game to Level 157, causing the
+                        software to crash for the first time.</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+            <h2 style="text-align: center; color: var(--neon-pink); font-size: 1.5rem;">EVOLUTION OF TETRIS</h2>
+            <div
+                style="display: flex; flex-direction: column; align-items: center; position: relative; padding: 20px 0;">
+                <div
+                    style="position: absolute; width: 4px; background: var(--neon-cyan); top: 0; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 1;">
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>1990s</h3>
+                    <p>The era of <b>The Next Tetris</b> and <b>Tetris DX</b>, adding colorful visuals and saving
+                        progress.</p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>2000s</h3>
+                    <p>Standardization with <b>Tetris DS</b> and the <b>Tetris Worlds</b> series, defining modern
+                        rotation rules.</p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>2010s</h3>
+                    <p>The hypnotic <b>Tetris Effect</b> brings VR and music-syncing to the legendary puzzle gameplay.
+                    </p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-pink); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>PRESENT</h3>
+                    <p>Battle Royale competitive play with <b>Tetris 99</b> and the release of the <b>Tetris</b>
+                        biographical film.</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+            <div style="border: 2px solid var(--neon-cyan); margin-bottom: 40px;">
+                <button onclick="toggleExtraInfo()"
+                    style="width: 100%; background: #222; color: var(--neon-cyan); padding: 15px; border: none; font-family: 'VT323'; font-size: 1.5rem; text-align: left; cursor: pointer;">[+]
+                    EXTRA INFO & EXTERNAL LINKS</button>
+                <div id="extraInfoContent"
+                    style="display: none; background: #111; padding: 20px; border-top: 1px solid var(--neon-cyan);">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="https://tetris.com/" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> The Official Tetris
+                                Website</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Tetris_(NES_video_game)" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> Wikipedia: Tetris</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="start-bar">
+            <div class="start-btn"></div>
+        </div>
+    </div>
+    <div id="imgModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+        <span class="close-modal"
+            style="position:absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+        <img id="modalImg" style="max-width:80%; max-height:80%; border:5px solid white;">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
