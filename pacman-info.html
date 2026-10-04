@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Info - Retro Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="xp-window">
+        <div class="title-bar">
+            <div class="title-text">Game_Details.exe</div>
+            <div class="window-controls"><span>_</span><span>[]</span><span class="close-btn"
+                    onclick="history.back()">X</span></div>
+        </div>
+        <div class="content-area" style="overflow-y: auto;">
+            <nav style="display: flex; align-items: center; justify-content: space-between;">
+                <a href="index.html">Back to Home</a>
+                <div style="display: flex; gap: 8px;">
+                    <button onclick="changeFontSize('increase')"
+                        style="background: var(--neon-cyan); color: black; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A+</button>
+                    <button onclick="changeFontSize('decrease')"
+                        style="background: var(--neon-pink); color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">A-</button>
+                    <button onclick="changeFontSize('reset')"
+                        style="background: #333; color: white; border: 1px solid white; cursor: pointer; font-family: 'VT323'; padding: 2px 8px;">Reset</button>
+                </div>
+            </nav>
+            <h1>GAME INFORMATION</h1>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Y-WPZwfIb5lfV49vIzVMKLX-NBKx4-vyRQ&s"
+                    class="modal-trigger" style="border: 4px solid var(--neon-cyan); width: 300px; cursor: zoom-in;">
+                <div>
+                    <h2 style="color: #39ff14;">PAC-MAN (1980)</h2>
+                    <p>Originally released in Japan as "Puck Man," this masterpiece by Toru Iwatani changed the gaming
+                        industry forever by moving away from "space shooters" to appeal to a wider audience.</p>
+                    <p><strong>DEVELOPER:</strong> Namco (Midway in North America)</p>
+                    <p><strong>THE OBJECTIVE:</strong> Navigate the maze, eating all 244 dots while avoiding the four
+                        ghosts: Blinky (Red), Pinky (Pink), Inky (Cyan), and Clyde (Orange). Eating a Power Pellet turns
+                        the ghosts blue, allowing Pac-Man to eat them for bonus points.</p>
+                    <p><strong>LEGACY:</strong> Pac-Man is often cited as the most famous arcade game of all time. It
+                        spawned the first "gaming mascot" and led to the "Pac-Mania" craze of the early 80s, including a
+                        hit song and a Saturday morning cartoon.</p>
+                    <p><strong>THE KILL SCREEN:</strong> Due to an 8-bit integer overflow, the game becomes unplayable
+                        at Level 256. Half the screen turns into a jumbled mess of symbols, making a "Perfect Game"
+                        impossible to continue past this point.</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+            <h2 style="text-align: center; color: var(--neon-pink); font-size: 1.5rem;">EVOLUTION OF PAC-MAN</h2>
+            <div
+                style="display: flex; flex-direction: column; align-items: center; position: relative; padding: 20px 0;">
+                <div
+                    style="position: absolute; width: 4px; background: var(--neon-cyan); top: 0; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 1;">
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>1990s</h3>
+                    <p>Transition to 3D with <b>Pac-Mania</b> and <b>Pac-Man World</b>.</p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>2000s</h3>
+                    <p>Reinvented visuals with <b>Championship Edition</b>.</p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-green); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>2010s</h3>
+                    <p>Introduction of <b>Ghostly Adventures</b> and the ultra-fast <b>CE DX+</b>.</p>
+                </div>
+                <div
+                    style="position: relative; z-index: 2; background: #111; border: 2px solid var(--neon-pink); padding: 15px; margin: 20px 0; width: 250px; text-align: center;">
+                    <h3>PRESENT</h3>
+                    <p>Modern hits like <b>Pac-Man 99</b> and <b>Museum+</b>.</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid var(--neon-cyan); margin: 40px 0;">
+            <div style="border: 2px solid var(--neon-cyan); margin-bottom: 40px;">
+                <button onclick="toggleExtraInfo()"
+                    style="width: 100%; background: #222; color: var(--neon-cyan); padding: 15px; border: none; font-family: 'VT323'; font-size: 1.5rem; text-align: left; cursor: pointer;">[+]
+                    EXTRA INFO & EXTERNAL LINKS</button>
+                <div id="extraInfoContent"
+                    style="display: none; background: #111; padding: 20px; border-top: 1px solid var(--neon-cyan);">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="https://www.pacman.com/en/" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> Official Pac-Man Website</a>
+                        </li>
+                        <li><a href="https://en.wikipedia.org/wiki/Pac-Man" target="_blank"
+                                style="color: var(--neon-green); text-decoration: none;">> Wikipedia: Pac-Man </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="start-bar">
+            <div class="start-btn"></div>
+        </div>
+    </div>
+    <div id="imgModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center;">
+        <span class="close-modal"
+            style="position:absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+        <img id="modalImg" style="max-width:80%; max-height:80%; border:5px solid white;">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

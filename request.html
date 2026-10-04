@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Content</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the Newsletter Popup */
+        .email-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            background: #111;
+            border: 3px solid var(--neon-pink);
+            padding: 20px;
+            width: 400px;
+            max-width: 90%;
+            color: white;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .privacy-box {
+            background: #222;
+            border: 1px solid #444;
+            padding: 10px;
+            font-size: 0.8rem;
+            margin: 15px 0;
+            height: 80px;
+            overflow-y: scroll;
+            color: #aaa;
+        }
+
+        .subscribe-btn-trigger {
+            background: none;
+            border: 1px dashed var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px 0 20px 0;
+            font-family: 'VT323';
+            width: 100%;
+        }
+
+        .subscribe-btn-trigger:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            color: var(--neon-pink);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="xp-window">
+        <div class="title-bar">
+            <div class="title-text">Request_Form.exe</div>
+            <div class="window-controls">
+                <span>_</span><span>[]</span><span class="close-btn" onclick="history.back()">X</span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <nav>
+                <a href="index.html">Top 4 Games</a>
+                <a href="games.html">Library & Media</a>
+                <a href="request.html">Request Game</a>
+            </nav>
+
+            <h1>INSERT COIN TO REQUEST</h1>
+
+            <form action="#" method="post">
+                <label for="gamename">GAME NAME:</label>
+                <input type="text" id="gamename" name="gamename" required>
+
+                <label for="category">CATEGORY:</label>
+                <select id="category"
+                    style="background: #222; color:white; padding: 10px; border: 2px solid var(--neon-cyan); width: 100%; font-family: 'VT323';">
+                    <option>Action</option>
+                    <option>Puzzle</option>
+                    <option>Shooter</option>
+                </select>
+
+                <label for="details" style="margin-top: 15px; display: block;">MEMORY DUMP (Details):</label>
+                <textarea id="details" name="details" rows="5"></textarea>
+
+                <button type="button" class="subscribe-btn-trigger" onclick="openEmailModal()">
+                    [!] CLICK HERE TO SUBSCRIBE TO NEWSLETTER
+                </button>
+
+                <button type="submit">SUBMIT REQUEST</button>
+            </form>
+        </div>
+
+        <div id="emailModal" class="email-modal">
+            <div class="modal-box">
+                <span class="modal-close" onclick="closeEmailModal()">[X]</span>
+                <h2>NEWSLETTER SIGN-UP</h2>
+
+                <label>ENTER EMAIL:</label>
+                <input type="email" id="userEmail" placeholder="user@arcade.com"
+                    style="width: 90%; margin-bottom: 10px;">
+
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">GDPR & PRIVACY STATEMENT:</p>
+                <div class="privacy-box">
+                    By submitting your email, you agree to our Privacy Policy. We use your data strictly for sending
+                    game updates.
+                    Under GDPR (General Data Protection Regulation), you have the right to access, rectify, or erase
+                    your data at any time.
+                    Your information is stored securely and is never shared with 3rd party "NPCs."
+                </div>
+
+                <button type="button" onclick="submitEmail()"
+                    style="width: 100%; background: var(--neon-pink); color: white; border: none; padding: 10px; cursor: pointer;">
+                    CONFIRM SUBSCRIPTION
+                </button>
+            </div>
+        </div>
+
+        <div class="start-bar">
+            <div class="start-btn">
+                <div class="logo-xp"></div> start
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEmailModal() {
+            document.getElementById('emailModal').style.display = 'flex';
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').style.display = 'none';
+        }
+
+        function submitEmail() {
+            const email = document.getElementById('userEmail').value;
+            if (email) {
+                alert("Thank you for signing up: " + email + " You should be receiving an email shortly");
+                closeEmailModal();
+            } else {
+                alert("ERROR: Please enter a valid email address.");
+            }
+        }
+
+        // Close modal if clicking outside the box
+        window.onclick = function (event) {
+            const modal = document.getElementById('emailModal');
+            if (event.target == modal) {
+                closeEmailModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+/* --- IMPORTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=VT323&display=swap');
+
+/* --- GLOBAL RETRO ARROW --- */
+html,
+body {
+    /* '0 0' is the tip of the arrow */
+    cursor: url('icons8-cursor.svg') 0 0, auto !important;
+}
+
+/* --- THE XP CLICKER (HAND) --- */
+/* This applies to all links, navigation tabs, and the accordion headers */
+a,
+.start-btn,
+.accordion-header,
+button,
+.window-controls span {
+    /* '12 0' puts the click-point at the tip of the index finger */
+    cursor: url('icons8-hand-cursor.svg') 12 0, pointer !important;
+}
+
+/* --- VARIABLES --- */
+:root {
+    --xp-blue: #0055EA;
+    --xp-bar-grad-top: #245dd7;
+    --xp-bar-grad-bot: #16369e;
+    --xp-bg: #3B6EA5;
+    --xp-win-bg: #ECE9D8;
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --neon-green: #39ff14;
+    --arcade-black: #111;
+}
+
+/* --- GLOBAL RESET & FONTS --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--xp-bg);
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Tahoma', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- WINDOWS XP GUI CONTAINER --- */
+.xp-window {
+    width: 90vw;
+    height: 85vh;
+    background: #111;
+    border: 3px solid #0055EA;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title-bar {
+    height: 35px;
+    background: linear-gradient(to bottom, var(--xp-bar-grad-top), var(--xp-bar-grad-bot));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px #000;
+}
+
+.window-controls span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #e0e0e0;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    margin-left: 5px;
+    color: black;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 0 #fff, 1px 1px 0 #000;
+}
+
+.window-controls .close-btn {
+    background: #d84838;
+    color: white;
+}
+
+/* --- ARCADE CONTENT AREA --- */
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    background: linear-gradient(rgba(18, 16, 16, 0.9), rgba(18, 16, 16, 0.9)),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, #000 3px, #000 3px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    border-bottom: 2px solid var(--neon-cyan);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 4px 4px 0px #000;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+h2,
+h3 {
+    font-family: 'VT323', monospace;
+    color: var(--neon-green);
+    font-size: 2rem;
+}
+
+/* --- HERO: EXPANDING CARDS (RESTORED) --- */
+.gallery-container {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    gap: 10px;
+}
+
+.game-card {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: flex 0.5s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(80%);
+}
+
+.game-card:hover {
+    flex: 3;
+    filter: grayscale(0%);
+    box-shadow: 0 0 20px var(--neon-pink);
+    border-color: var(--neon-pink);
+}
+
+.game-card h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    margin: 0;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover h3 {
+    transform: rotate(0deg);
+    bottom: 10px;
+    left: 10px;
+}
+
+/* --- GAMES EVOLUTION ACCORDIONS --- */
+.evolution-section {
+    margin-bottom: 40px;
+}
+
+.accordion-item {
+    border: 1px solid var(--neon-cyan);
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    width: 100%;
+    background: #222;
+    color: var(--neon-cyan);
+    padding: 15px;
+    text-align: left;
+    border: none;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-header:hover {
+    background: #333;
+    color: var(--neon-green);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #111;
+}
+
+.accordion-body {
+    padding: 15px;
+    border-top: 1px solid #444;
+    line-height: 1.4;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* --- FORM & SEARCH (RESTORED) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 15px;
+}
+
+input,
+textarea {
+    background: #222;
+    border: 2px solid var(--neon-cyan);
+    color: white;
+    padding: 10px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+button[type="submit"] {
+    background: var(--neon-pink);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#searchBar {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid var(--neon-green);
+    background: #000;
+    color: var(--neon-green);
+}
+
+/* --- START BAR --- */
+.start-bar {
+    height: 40px;
+    background: linear-gradient(to bottom, #245dd7, #16369e);
+    border-top: 2px solid #3B77BC;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.start-btn {
+    background: linear-gradient(to bottom, #3E9A4D, #2B7735);
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px 15px 5px 10px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between the new circle and the text */
+    cursor: pointer;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.start-btn::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* --- SLIDER & MODAL --- */
+.slide {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    background: #000;
+    cursor: zoom-in;
+    border: 3px solid var(--neon-cyan);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border: 4px solid var(--neon-pink);
+    box-shadow: 0 0 30px var(--neon-pink);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
